@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+        {% block content %}
+        
+		<div class="personalOpl">
+			<h2>OPLPOPS-Manager</h2>
+			<h3>Java desktop application to manage PlayStation 1 and 2 games for use with Open PS2 Loader and POPS Loader</h3>
+			<a href="https://github.com/logi-26/oplpops-manager">OPLPOPS-Manager source</a> 
+			
+			<p>This is a Java desktop application designed to efficiently manage your PlayStation 1 and 2 game collection. It offers a wide range of features, including:</p>
+
+			<ul>
+			  <li>Downloading images</li>
+			  <li>Downloading cheats</li>
+			  <li>Downloading game information</li>
+			  <li>Downloading game saves</li>
+			  <li>Downloading game compatibility data</li>
+			</ul>
+
+			<p>Notably, the application establishes direct communication with your PlayStation 2 console through FTP, enabling seamless file transfer and direct management on the console itself.</p>
+			<p>Additionally, the application interacts with a backend server to fetch game information and files, ensuring an up-to-date and comprehensive database.</p>
+		</div>
+		
+		<div class="personalRedumpScrapper">
+			<br>
+			<h2>Redump PlayStation Web Scrapper</h2>
+			<h3>Python script for scrapping PlayStation game information from the Redump website</h3>
+			<a href="https://github.com/logi-26/redump-playstation-scrapper">Redump PlayStation Scrapper source</a> 
+			
+			<p>This Python script is designed to scrape PlayStation game information from the Redump website. It utilizes the <strong>Beautiful Soup</strong> module to parse the HTML pages and extract essential details.</p>
+			<p>The script gathers comprehensive information about a game disc, including:</p>
+
+			<ul>
+			  <li>Number of tracks</li>
+			  <li>Pre-gap length</li>
+			  <li>Sector size</li>
+			  <li>PlayStation libCrypt usage</li>
+			  <li>MD5</li>
+			  <li>SHA</li>
+			</ul>
+
+			<p>This valuable data is then stored in a local <strong>SQLite database</strong> for easy access and management.</p>
+			<p>The extracted information serves a crucial purpose in another application that I've developed. The said application is specifically tailored for managing PlayStation 1 games intended for use with a PSIO device.</p>
+		</div>
+		
+		<div class="personalPsioAssist">
+			<br>
+			<h2>PSIO Assist</h2>
+			<h3>Python script for managing PlayStation games for use with a PSIO device</h3>
+			<a href="https://github.com/logi-26/psio-assist">PSIO Assist source</a> 
+			
+			<p>This Python script incorporates the <code>'tinkter'</code> module to create a user-friendly GUI that empowers users to manage their PlayStation games for use with a PSIO.</p>
+			<p>The script facilitates the following tasks:</p>
+
+			<ul>
+			  <li>Merging of multi-bin games into a single bin file</li>
+			  <li>Generating CU2 sheets for the game discs</li>
+			  <li>Adding game art</li>
+			  <li>Validating game names</li>
+			  <li>Creating multi-disc files for games that utilize more than one disc</li>
+			</ul>
+
+			<p>To accomplish these tasks, the script relies on game disc information previously scraped from the Redump website.</p>
+		</div>
+		
+		<div class="personalPieCloudCompile">
+			<br>
+			<h2>PiS2 Cloud Compiler</h2>
+			<h3>Python scripts for compiling PlayStation 2 elf files on a networed Raspberry Pi</h3>
+			<a href="https://github.com/logi-26/PiS2-Cloud-Compiler">PiS2 Cloud Compiler source</a> 
+			
+			<p>The open-source PS2SDK can be compiled on a Unix system in under 30 minutes, but it doesn't compile natively on a Windows machine. To compile the PS2SDK on Windows, <em>MinGW</em> is required, and it can only utilize a single core of the processor. Depending on the CPU speed, compiling the PS2SDK on a Windows machine may take 3-4 hours.</p>
+			<p>I conducted tests for the PS2SDK compile time on various Raspberry Pi boards. A Raspberry Pi model 1 required over 3 hours for compilation, while a newer Raspberry Pi model 3 could complete the process in just 40 minutes.</p>
+			<p>As a proof-of-concept, I developed basic Python scripts to compile C source code into PlayStation 2 elf files using a Raspberry Pi connected to the local network. The C source code is uploaded to the Raspberry Pi, where it gets compiled into an elf file using the PS2SDK. Finally, the elf file is returned to the sender. This approach allows PlayStation 2 elf files to be compiled on a system without the need to install the PS2SDK.</p>
+		</div>
+		
+		<div class="personalBreakoutYaroze">
+			<br>
+			<h2>Breakout PlayStation Net Yaroze</h2>
+			<h3>Breakout game for the PlayStation Net Yaroze development console</h3>
+			<a href="https://github.com/logi-26/Breakout-PlayStation-Net-Yaroze">Breakout Net Yaroze source</a> 
+			
+			<p>This is a basic implementation of the Breakout game on the PlayStation Net Yaroze console. I've owned a Net Yaroze console for a few years and had a strong desire to learn the SDK functions, allowing me to create a simple game.</p>
+			<p>The game development took place on a Windows 95 machine using the CodeWarrior IDE, which mirrors the same development environment that developers used in the late 90's.</p>
+		</div>
+		
+		<div class="personalSpaceDs">
+			<br>
+			<h2>Space Invaders Nintendo DS</h2>
+			<h3>A Space Invaders game for the Nintendo DS hand-held console</h3>
+			<a href="https://github.com/logi-26/Space-Invaders-Nintendo-DS">Space Invaders Nintendo DS source</a> 
+			
+			<p>This is an implementation of the classic Space Invaders game on the Nintendo DS hand-held console. The game was developed using the open-source SDK DevKitPro.</p>
+			<p>Written in C++, the game boasts several captivating features, including:</p>
+			
+			<ul>
+			  <li>Multiple levels</li>
+			  <li>Background music</li>
+			  <li>Sound effects</li>
+			  <li>A high scores list to keep track of players' achievements</li>
+			</ul>
+
+			<p>For the game's graphics, the NightFox graphic library was utilized, while the MaxMod audio library added an extra dimension with its impressive audio capabilities.</p>	
+		</div>
+		
+		<div class="personalAlexSaturn">
+			<br>
+			<h2>Alex Kidd Sega Saturn</h2>
+			<h3>A basic Alex Kidd clone game for the Sega Saturn</h3>
+			<a href="https://github.com/logi-26/Alex-Kidd-Sega-Saturn">Alex Kidd Sega Saturn source</a> 
+			
+			<p>This is a prototype of the classic Alex Kidd game, specially developed for the Sega Saturn console using the open-source JoEngine.</p>
+			<p>The game is written in C and offers an immersive experience with background music, dynamic sound effects, and a death animation.</p>
+			<p>To retain the nostalgic essence, the game incorporates sprites that have been extracted from the original Sega MasterSystem game, adding a touch of nostalgia to the gameplay.</p>
+		</div>
+		
+		<div class="personalTetrisArduino">
+			<br>
+			<h2>Tetris Arduino</h2>
+			<h3>A basic Tetris clone game for the Arduino platform</h3>
+			<a href="https://github.com/logi-26/Tetris-Arduino">Tetris Arduino source</a> 
+			
+			<p>This is an implementation of the Tetris game, designed to run on an Arduino Uno board. The development of this game was a part of my university coursework, where the objective was to create a portable game using an Arduino board.</p>
+			<p>The game is written in C++, offering an engaging experience with background music and a display that shows the next shape being generated. To accommodate small LCD monitors, a basic low-level graphics library is utilized for rendering.</p>
+			<p>All the shapes in the game are generated using a simple function that draws a single square block with a black border.</p>
+			<p>To ensure smooth performance, the device consists of two Arduino Uno boards. One board handles the Tetris game while the other board is exclusively dedicated to playing the background music.</p>
+		</div>
+		
+		<div class="personalSpacePc">
+			<br>
+			<h2>Space Invaders XNA</h2>
+			<h3>A basic Space Invaders game for the XNA platform written in 2 different languages</h3>
+			<a href="https://github.com/logi-26/Space-Invaders-XNA-CSHARP">Space Invaders C# source</a><br>
+			<a href="https://github.com/logi-26/Space-Invaders-XNA-FSHARP">Space Invaders F# source</a> 
+			
+			<p>This is an implementation of the Space Invaders game for the XNA platform. These games were created as part of my university coursework, which mandated the development of two identical applications using two vastly different programming languages.</p>
+			<p>I chose to pursue these games due to my fascination with the XNA platform, and the novelty of developing XNA games using the F# language, which seemed relatively rare.</p>
+			<p>Both games are nearly indistinguishable, making it almost impossible to discern which version is running.</p>
+		</div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+body {background-color: #ff8533;}
+
+.myUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.myUl {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.myLi {
+  float: left;
+}
+
+.myLia {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.myLia:hover {
+  background-color: #111;
+}
+
+.myTitle {
+  text-align: center;
+}
+
+.aboutMe {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.cvProfile {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.cvEducation {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.cvEmployment {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.workMisat {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.workPureFarming {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.workSeedScanner {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalOpl {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalRedumpScrapper {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalPsioAssist {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalPieCloudCompile {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalBreakoutYaroze {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalSpaceDs {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalAlexSaturn {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalTetrisArduino {
+  padding-left: 25%;
+  width: 50%;
+}
+
+.personalSpacePc {
+  padding-left: 25%;
+  width: 50%;
+}
+
+
+
+.aboutImage { 
+	padding-top: 4%;
+	text-align: center;
+}
+
+
+.contactInformation{
+	text-align: center;
+}

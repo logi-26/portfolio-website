@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<html>
+    <head>
+        <title>Louis Portfolio Page</title>
+    </head>
+    <body>
+
+		<div class="myTitle">
+			<h1>Louis Gilmartin</h1>
+			<h4>My portfolio website (powered by Flask)</h4>
+		</div>
+		
+		<ul class="myUl">
+            <li class="myLi"><a class="myLia" href="/"> Home </a></li>
+            <li class="myLi"><a class="myLia" href="/cv"> CV </a></li>
+            <li class="myLi"><a class="myLia" href="/work"> Work Projects </a></li>
+            <li class="myLi"><a class="myLia" href="/personal"> Personal Projects </a></li>
+        </ul>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

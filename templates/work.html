@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+        {% block content %}
+        
+		<div class="workMisat">
+			<h2>MiSAT</h2>
+			<h3>System to download and process satellite data</h3>
+			<a href="https://www.precision-decisions.co.uk/agriculture/misat/">MiSAT Information</a> 
+			
+			<p>This is a system designed for the Argi-Tech industry to efficiently download and process Sentinel-2 satellite data. The system operates through multiple docker containers, all written in Python.</p>
+			<p>One of the containers is responsible for querying the European Space Agency's API to locate the latest data captured for the UK and downloads it using the Python requests library. Subsequently, the container uploads the satellite data to an S3 bucket and inserts the file-path and timestamp into our MySQL database.</p>
+			<p>This container has been running non-stop for more than 5 years, successfully downloading every Sentinel-2 image captured over the UK during this extensive period, amassing many terabytes of data.</p>
+			<p>Another container handles the processing of orders placed through our web platform. It queries our MySQL database to retrieve geometric data for all fields in a customer's farm. This container analyzes the geometric data to determine which satellite images will be necessary for processing the order. It then downloads the requisite satellite data from our S3 bucket and transfers this information to another container.</p>
+			<p>The final container takes charge of the indices calculation based on the order type, which could be RGB, Normalized Difference Vegetation Index, Chlorophyll Green Index, or a custom Biomass Index. These calculations are performed on two-dimensional NumPy arrays containing the raw satellite band data.</p>
+			<p>In carrying out these operations, the scripts skillfully utilize numerous Python geospatial libraries to atmospherically correct the satellite data, cloud-mask and color-map the satellite data.</p>
+			<p>The container then proceeds to cut the geographic area for each of the customer's fields, analyzes the raw data values, and inserts them into a MySQL database. It generates a PNG file from the GeoTIFF file and uploads it to an S3 bucket, finally updating another MySQL database to indicate that the customer's order has been successfully processed.</p>
+		</div>
+		
+		<div class="workPureFarming">
+			<br>
+			<h2>Pure Farming</h2>
+			<h3>System to ingest and transform Agri-Tech data</h3>
+			<a href="https://www.purefarming.com/">Pure Farming Information</a> 
+			
+			<p>This cloud platform harnesses the power of AWS Lambda, EventBridge, CloudWatch, S3, and RDS, predominantly employing Python for its implementation.</p>
+			<p>The system comprises numerous ingestion pipelines responsible for fetching data from diverse sources in varying formats. It then standardizes the data into JSON objects, validates it against schema models, and finally inserts the data into relational databases.</p>
+			<p>Each pipeline follows a three-stage process: fetch, pre-process, and ingestion. The fetch lambda retrieves data, typically from APIs, and uploads it as a JSON object to an S3 bucket. Subsequently, it triggers the pre-process lambda by posting an event.</p>
+			<p>The pre-process lambda receives the fetch process details in an event, downloads the data from the S3 bucket, and determines the data's organization by calling our internal API. The lambda then divides the data into multiple JSON objects based on resource-type and uploads it to another S3 bucket. Afterward, it posts an event to trigger the standardization lambda.</p>
+			<p>The standardization lambda receives an event containing the pre-processed data and organization details. It downloads the pre-processed JSON objects from the S3 bucket and maps the data to our resource schema files. The lambda then performs data validation and uploads it to another S3 bucket, followed by an event posting to trigger a change detector responsible for inserting the data into the relational database for the specified organization.</p>
+			<p>Recently, this system has been utilized by one of the UK's major food suppliers to process all of their livestock data, encompassing husbandry, health, weight, and carcass information.</p>
+		</div>
+		
+		<div class="workSeedScanner">
+			<br>
+			<h2>Seed Scanner</h2>
+			<h3>Mobile app developed for a large food manufacturer to track seed bags</h3>
+			
+			<p>We collaborated with one of the UK's largest food manufacturers to provide them with an online mapping platform to manage their crop fields. During our work, they expressed interest in achieving traceability for their industrial seed bags.</p>
+			<p>With over 1000 crop fields, the company needed a system to track seed bags, specifically Pea seeds of various varieties, from the warehouse to the fields, encompassing multiple stages like loading into a vehicle, unloading at a storage unit, and loading into the tractor sprayer.</p>
+			<p>To fulfill this requirement, we proposed developing a mobile application that could run on both Android and iOS devices, ensuring usability in the field, even in areas without network connectivity. We opted for Xamarin, as it enabled us to use a single codebase for both platforms.</p>
+			<p>The application allows users to select a reason for scanning the seed bag from a dynamic list of reasons retrieved from an API. Upon scanning a barcode, the app records the barcode's unique number, current GPS coordinates, timestamp, and the reason for scanning in an internal SQLite database. When the user is ready to upload the barcode information, they can click on the upload button, and all the data stored in the internal SQLite database is sent to an API, which then inserts it into a MySQL database, ensuring seamless traceability for the seed bags.</p>
+		</div>
+			
+{% endblock %}
