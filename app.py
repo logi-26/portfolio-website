@@ -9,18 +9,15 @@ def home():
   
 @app.route("/cv")
 def var():
-    user = "Geeksforgeeks"
-    return render_template("cv.html", name=user)
+    return render_template("cv.html")
   
 @app.route("/work")
 def ifelse():
-    user = "Practice GeeksforGeeks"
-    return render_template("work.html", name=user)
+    return render_template("work.html")
   
 @app.route("/personal")
 def for_loop():
-    list_of_courses = ['Java', 'Python', 'C++', 'MATLAB']
-    return render_template("personal.html", courses=list_of_courses)
+    return render_template("personal.html")
   
 if __name__ == "__main__":
     app.run(debug=False)
